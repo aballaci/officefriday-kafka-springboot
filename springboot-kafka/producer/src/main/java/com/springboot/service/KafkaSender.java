@@ -3,6 +3,7 @@ package com.springboot.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.springboot.model.Mitarbeiter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,6 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.support.GenericMessage;
 import org.springframework.stereotype.Service;
-
-import com.springboot.model.Student;
 
 @Service
 public class KafkaSender {
@@ -25,13 +24,13 @@ public class KafkaSender {
 	@Value("${kafka.topic.name}")
 	private String topicName;
 
-	public void sendData(Student student) {
+	public void sendData(Mitarbeiter mitarbeiter) {
 		// TODO Auto-generated method stub
 		Map<String, Object> headers = new HashMap<>();
 		headers.put(KafkaHeaders.TOPIC, topicName);
-		kafkaTemplate.send(new GenericMessage<Student>(student, headers));
+		kafkaTemplate.send(new GenericMessage<Mitarbeiter>(mitarbeiter, headers));
 		// use the below to send String values through kafka
 		// kafkaTemplate.send(topicName, "some string value")
-		LOGGER.info("Data - " + student.toString() + " sent to Kafka Topic - " + topicName);
+		LOGGER.info("Data - " + mitarbeiter.toString() + " sent to Kafka Topic - " + topicName);
 	}
 }

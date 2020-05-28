@@ -1,7 +1,7 @@
 kafka:
   boot:
-    server: localhost:9092
+    server: officefriday-cp-kafka-headless:9092
   topic:
-    name: myTopic-kafkasender
+    name: demo-topic
 server:
-  port: 8081 
+  port: 7777
