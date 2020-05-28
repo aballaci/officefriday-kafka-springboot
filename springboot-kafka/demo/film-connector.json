@@ -1,0 +1,16 @@
+{
+    "name": "film_connector",
+    "config": {
+      "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+      "errors.retry.timeout": "-1",
+      "errors.log.enable": "true",
+      "errors.log.include.messages": "true",
+      "connection.url": "jdbc:postgresql://postgres-postgresql:5432/postgres",
+      "connection.user": "postgres",
+      "connection.password": "s3hfUNDagb",
+      "table.whitelist": "film",
+      "dialect.name": "PostgreSqlDatabaseDialect",
+      "mode": "bulk",
+      "topic.prefix": "sakila-"
+    }
+  }

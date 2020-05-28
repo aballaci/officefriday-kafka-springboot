@@ -17,7 +17,7 @@ public class ModelGenerator {
         mitarbeiter.setUserId(String.valueOf(id));
         Anscrift anscrift = new Anscrift();
         anscrift.setHousenummer(faker.address().buildingNumber());
-        anscrift.setEmail(mitarbeiter.getName().toLowerCase() + "@example.com");
+        anscrift.setEmail(mitarbeiter.getName().toLowerCase() + "@officefriday.com");
         anscrift.setPlz(faker.numerify("90###"));
         anscrift.setStadt(faker.address().city());
         anscrift.setStrasse(faker.address().streetName());
