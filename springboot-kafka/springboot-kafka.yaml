@@ -29,7 +29,7 @@ spec:
       containers:
       - name: springboot-kafka-producer
         imagePullPolicy: Always
-        image: aballaci/springboot-kafka-producer:v4
+        image: aballaci/springboot-kafka-producer:v6
         ports:
         - containerPort: 7777
 ---

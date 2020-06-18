@@ -28,6 +28,7 @@ public class KafkaSender {
 		// TODO Auto-generated method stub
 		Map<String, Object> headers = new HashMap<>();
 		headers.put(KafkaHeaders.TOPIC, topicName);
+		headers.put(KafkaHeaders.MESSAGE_KEY, mitarbeiter.getUserId());
 		kafkaTemplate.send(new GenericMessage<Mitarbeiter>(mitarbeiter, headers));
 		// use the below to send String values through kafka
 		// kafkaTemplate.send(topicName, "some string value")

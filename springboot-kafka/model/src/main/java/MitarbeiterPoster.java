@@ -17,7 +17,7 @@ public class MitarbeiterPoster {
 
     static {
         try {
-            uri = new URI("http://localhost:31077/kafkaProducer");
+            uri = new URI("http://localhost:31927/kafkaProducer");
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
@@ -35,7 +35,7 @@ public class MitarbeiterPoster {
             String message = new Gson().toJson(m);
             postJSON(message);
             userId++;
-            Thread.sleep(1200);
+            Thread.sleep(2000);
         }
 
     }

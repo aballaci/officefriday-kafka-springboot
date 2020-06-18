@@ -3,5 +3,9 @@ kafka:
     server: officefriday-cp-kafka-headless:9092
   topic:
     name: demo-topic
+  avro:
+    numRecords: 100
+    topic:
+      name: simple-event
 server:
   port: 7777
