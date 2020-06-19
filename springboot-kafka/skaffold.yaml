@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta3
+kind: Config
+metadata:
+  name: springboot-kafka
+build:
+  artifacts:
+  - image: aballaci/springboot-kafka-producer
+    context: producer
+  - image: aballaci/springboot-kafka-consumer
+    context: consumer
+deploy:
+  kubectl:
+    manifests:
+    - springboot-kafka.yaml

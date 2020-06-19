@@ -1,11 +1,25 @@
 kafka:
   boot:
     server: officefriday-cp-kafka-headless:9092
+  schema:
+    registry:
+      url: "http://officefriday-cp-schema-registry:8081"
   topic:
     name: demo-topic
   avro:
     numRecords: 100
     topic:
       name: simple-event
-server:
-  port: 7777
+
+debug: false
+
+---
+spring:
+  profiles: development
+kafka:
+  boot:
+    server: localhost:31091
+  schema:
+    registry:
+      url: "http://localhost:32090"
+

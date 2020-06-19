@@ -61,7 +61,7 @@ public class KafkaAvroSender implements ApplicationRunner {
             String id = String.valueOf(i);
             Event event = new Event(id, faker.options().nextElement(types), ts);
             sendData(event);
-            Thread.sleep(2000);
+            Thread.sleep(500);
         }
 
     }
